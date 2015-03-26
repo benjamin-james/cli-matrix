@@ -101,8 +101,8 @@ struct drop *newDrop()
 	if (rand() % 2)
 		d->y = 0;
 	else
-		d->y = rand() % rows;
-	d->x = rand() % cols;
+		d->y = rand() % (rows+1);
+	d->x = rand() % (cols+1);
 	d->len = 0;
 	d->max_len = rand() % (3 * rows / 2) + 4;
 	if (d->max_len >= rows)
