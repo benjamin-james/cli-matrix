@@ -118,7 +118,6 @@ void colorPrint(char c, int fg, int bg, int attr)
 
 void showCursor(int state) 
 {
-	int i,j;
 	if (state) {
 		fputs("\e[" "?25h", stdout);
 	} else {
@@ -128,7 +127,8 @@ void showCursor(int state)
 
 void sighandler(int signum)
 {  
-	int ret = system("clear");
+	if (system("clear") < 0)
+		exit(-1);
 	printf("\n\n");
 	showCursor(1);
 	exit(signum);
