@@ -6,4 +6,4 @@ array.o: src/array.c
 	$(CC) $(CFLAGS) -c -O3 src/array.c -o array.o
 clean:
 	rm array.o
-	rm demo
+	rm cli-matrix
